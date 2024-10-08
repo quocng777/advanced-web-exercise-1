@@ -80,7 +80,7 @@ export default function Game() {
   function handlePlay(nextSquares, move) {
     const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
     setHistory(nextHistory);
-    let row = move % 3;
+    let row = Math.floor(move / 3);
     let col = move - 3 * row;
     setLocaltion((prev) => {
       return [
